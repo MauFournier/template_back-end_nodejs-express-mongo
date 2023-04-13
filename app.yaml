@@ -1,0 +1,14 @@
+runtime: nodejs16
+env: standard
+instance_class: F1
+automatic_scaling:
+  min_instances: 1
+  max_instances: 1
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+#  env_variables:
+#    MONGODB_URI: 'mongodb+srv://______:_________@________.mongodb.net/_________?retryWrites=true&w=majority'
+
+#  vpc_access_connector:
+#    name: projects/__________/locations/us-central1/connectors/_________
+#    egress_setting: all-traffic

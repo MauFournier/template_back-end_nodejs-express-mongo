@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es2015",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "outDir": "./public",
+    "rootDir": "./src"
+  },
+  "exclude": ["./node_modules", "./corkboard.ts"]
+}
