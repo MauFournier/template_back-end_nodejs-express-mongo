@@ -1,16 +1,17 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-const MONGODB_URI = process.env.MONGODB_URI;
-
-const defaultPort = 3000;
-
-const app = express();
-import mongoose from 'mongoose';
+import loadConfig from './config/env';
+import connectDB from './config/db';
 
 import taskRoutes from './routes/taskRoutes.js';
 
 async function main() {
+  const config = await loadConfig();
+  const defaultPort = 3000;
+
+  const app = express();
+
   //middleware to allow the parsing of the incoming request body
   app.use(bodyParser.json());
 
@@ -35,15 +36,23 @@ async function main() {
     `);
   });
 
+  const MONGODB_URI =
+    process.env.NODE_ENV === 'production'
+      ? config.MONGODB_URI_ATLAS
+      : config.MONGODB_URI_LOCAL;
+
   try {
-    if (MONGODB_URI !== undefined) {
-      await mongoose.connect(MONGODB_URI);
+    if (MONGODB_URI) {
+      await connectDB(MONGODB_URI);
+    } else {
+      console.error('No MongoDB URI provided');
+      process.exit(1);
     }
   } catch (error) {
     console.log(error);
   }
 
-  const PORT = process.env.PORT || defaultPort;
+  const PORT = config.PORT || defaultPort;
   app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
   });
