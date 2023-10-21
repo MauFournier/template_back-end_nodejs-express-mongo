@@ -30,7 +30,7 @@ async function getSecret(secretName: string): Promise<string | undefined> {
   }
 
   const client = new SecretManagerServiceClient();
-  const projectId = 'taskfitter-back-end';
+  const projectId = 'myapp-back-end'; //GCloud Project ID
   const secretVersion = `projects/${projectId}/secrets/${secretName}/versions/latest`;
 
   try {
