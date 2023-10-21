@@ -5,14 +5,14 @@
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MauFournier/taskfitter.git"
+    "url": "git+https://github.com/MauFournier/template_back-end_nodejs-express-mongo.git"
   },
   "author": "Mau Frontier",
   "license": "Proprietary",
   "bugs": {
-    "url": "https://github.com/MauFournier/taskfitter/issues"
+    "url": "https://github.com/MauFournier/template_back-end_nodejs-express-mongo/issues"
   },
-  "homepage": "https://github.com/MauFournier/taskfitter#readme",
+  "homepage": "https://github.com/MauFournier/template_back-end_nodejs-express-mongo#readme",
   "scripts": {
     "test": "jest",
     "start": "nodemon dist/index.js",
