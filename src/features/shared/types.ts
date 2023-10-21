@@ -7,13 +7,3 @@ export enum DaysOfWeek {
   Saturday = 5,
   Sunday = 6,
 }
-
-export interface LinkAttachment {
-  _id: string;
-  createdAt: string;
-  updatedAt: string;
-  url: string;
-  userId: string;
-
-  title?: string;
-}

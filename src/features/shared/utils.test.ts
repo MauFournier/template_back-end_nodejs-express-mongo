@@ -1,8 +1,4 @@
-import {
-  pendingTask1,
-  pendingTask2,
-  pendingTask3,
-} from '../../config/seedTestData/seedTasks';
+import {aTask1, aTask2} from '../../config/seedTestData/seedTasks';
 import {
   addFakeUndefinedMongoVersioningField,
   removeMongoVersionFields,
@@ -13,7 +9,7 @@ describe('Shared Utils', () => {
   describe('removeMongoVersionFieldsFromSingleRecord', () => {
     it('should remove the __v field from a single record', async () => {
       const task = {
-        ...pendingTask1,
+        ...aTask1,
         __v: 0,
       };
 
@@ -27,7 +23,7 @@ describe('Shared Utils', () => {
   describe('removeMongoVersionFields', () => {
     it('should remove the __v field from a single record', async () => {
       const task = {
-        ...pendingTask1,
+        ...aTask1,
         __v: 0,
       };
 
@@ -39,15 +35,11 @@ describe('Shared Utils', () => {
     it('should remove the __v field from multiple records', async () => {
       const tasks = [
         {
-          ...pendingTask1,
+          ...aTask1,
           __v: 0,
         },
         {
-          ...pendingTask2,
-          __v: 0,
-        },
-        {
-          ...pendingTask3,
+          ...aTask2,
           __v: 0,
         },
       ];
@@ -56,7 +48,6 @@ describe('Shared Utils', () => {
 
       expect('__v' in tasksWithoutMongoVersioningField[0]).toBe(false);
       expect('__v' in tasksWithoutMongoVersioningField[1]).toBe(false);
-      expect('__v' in tasksWithoutMongoVersioningField[2]).toBe(false);
     });
   });
 

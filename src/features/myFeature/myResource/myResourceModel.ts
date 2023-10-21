@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import {TaskStatus} from './myResourceTypes';
 
 const taskSchema = new mongoose.Schema(
   {
@@ -6,13 +7,18 @@ const taskSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    userId: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
     },
-    description: {
+    status: {
       type: String,
-      required: false,
+      required: true,
+      enum: Object.values(TaskStatus),
     },
   },
   {timestamps: true},

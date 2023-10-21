@@ -6,12 +6,13 @@ import {
   updateTask,
   deleteTask,
 } from './myResourceController';
+import catchAsyncErrors from '../../shared/middleware/ErrorCatcherMiddleware/catchAsyncErrors';
 
-const router = express.Router(); //router is like a mini express app, that we can plug into app.use()
+const router = express.Router();
 
-router.get('/tasks', getTasks);
-router.post('/task', createTask);
-router.put('/task', updateTask);
-router.delete('/task', deleteTask);
+router.get('/tasks', catchAsyncErrors(getTasks));
+router.post('/task', catchAsyncErrors(createTask));
+router.put('/task/:_id', catchAsyncErrors(updateTask));
+router.delete('/task/:_id', catchAsyncErrors(deleteTask));
 
 export default router;
