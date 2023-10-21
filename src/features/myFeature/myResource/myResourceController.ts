@@ -1,4 +1,4 @@
-import Task from '../models/taskModel.js';
+import Task from '../../../models/taskModel.js';
 import {v4 as generateUUID} from 'uuid';
 
 const getTasks = async (req: any, res: any, next: any) => {

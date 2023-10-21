@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import loadConfig from './config/env';
 import connectDB from './config/db';
 
-import taskRoutes from './routes/taskRoutes.js';
+import taskRoutes from './features/myFeature/myResource/taskRoutes.js';
 
 async function main() {
   const config = await loadConfig();

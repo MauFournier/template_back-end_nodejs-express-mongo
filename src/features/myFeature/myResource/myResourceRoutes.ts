@@ -5,7 +5,7 @@ import {
   createTask,
   updateTask,
   deleteTask,
-} from '../controllers/taskController.js';
+} from './myResourceController.js';
 
 const router = express.Router(); //router is like a mini express app, that we can plug into app.use()
 
