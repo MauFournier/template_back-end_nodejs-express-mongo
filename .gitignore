@@ -2,6 +2,7 @@
 node_modules/
 dist/
 
+# Local environment variables
 .env
 
 # personal notes
