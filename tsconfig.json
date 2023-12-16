@@ -8,7 +8,11 @@
     "strict": true,
     "types": ["jest", "node"],
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["./src/*"]
+    }
   },
   "exclude": ["./node_modules", "./corkboard.ts", "./corkboard.example.ts"]
 }

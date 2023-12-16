@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 import {MongoMemoryServer} from 'mongodb-memory-server';
 
-import TaskModel from '../features/myFeature/myResource/myResourceModel';
-import UserModel from '../features/auth/userModel';
+import TaskModel from 'src/features/myFeature/myResource/myResourceModel';
+import UserModel from 'src/features/auth/userModel';
 
-import {Task} from '../features/myFeature/myResource/myResourceTypes';
-import {User} from '../features/auth/userTypes';
+import {Task} from 'src/features/myFeature/myResource/myResourceTypes';
+import {User} from 'src/features/auth/userTypes';
 
 import {seedTestData_tasks} from './seedTestData/seedTasks';
 import {seedTestData_users} from './seedTestData/seedUsers';

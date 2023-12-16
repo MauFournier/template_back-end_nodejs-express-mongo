@@ -1,14 +1,17 @@
-import {user1} from '../../../../config/seedTestData/seedUsers';
-import {useDatabase} from '../../../../config/test-setup';
-import TaskModel from '../myResourceModel';
+import {user1} from 'src/config/seedTestData/seedUsers';
+import {useDatabase} from 'src/config/test-setup';
+import TaskModel from 'src/features/myFeature/myResource/myResourceModel';
 
-import {aTask1, aTask2} from '../../../../config/seedTestData/seedTasks';
+import {aTask1, aTask2} from 'src/config/seedTestData/seedTasks';
 
-import {Task, TaskStatus} from '../myResourceTypes';
+import {
+  Task,
+  TaskStatus,
+} from 'src/features/myFeature/myResource/myResourceTypes';
 import {
   convertTaskDBResultToTaskObject,
   convertTaskDBResultsToTaskObjectArray,
-} from '../myResourceUtils';
+} from 'src/features/myFeature/myResource/myResourceUtils';
 
 useDatabase();
 

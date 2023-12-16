@@ -1,4 +1,4 @@
-import {User} from '../../features/auth/userTypes';
+import {User} from 'src/features/auth/userTypes';
 
 export const user1: User = {
   _id: 'id_user1',

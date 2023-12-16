@@ -2,8 +2,8 @@ import {user1, seedTestData_users} from './seedTestData/seedUsers';
 import {aTask1, seedTestData_tasks} from './seedTestData/seedTasks';
 
 import {useDatabaseForSingleTest} from './test-setup';
-import UserModel from '../features/auth/userModel';
-import TaskModel from '../features/myFeature/myResource/myResourceModel';
+import UserModel from 'src/features/auth/userModel';
+import TaskModel from 'src/features/myFeature/myResource/myResourceModel';
 
 describe('Seeding', () => {
   const customTaskTitle = 'Custom task title';

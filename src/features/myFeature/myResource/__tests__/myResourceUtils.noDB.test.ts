@@ -1,5 +1,11 @@
-import {Task, TaskStatus} from '../myResourceTypes';
-import {filterTasksLeavingPending, isTaskPending} from '../myResourceUtils';
+import {
+  Task,
+  TaskStatus,
+} from 'src/features/myFeature/myResource/myResourceTypes';
+import {
+  filterTasksLeavingPending,
+  isTaskPending,
+} from 'src/features/myFeature/myResource/myResourceUtils';
 
 describe('taskUtils', () => {
   const anyDate = new Date().toISOString();

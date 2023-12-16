@@ -6,7 +6,7 @@ import {
   convertUTCDateToLocalTimezoneDate,
   getDateForStartOfLocalDay,
   getDateForStartOfCurrentLocalDay,
-} from '../dateTimeUtils';
+} from 'src/features/shared/dateTime/dateTimeUtils';
 
 describe('dateTimeUtils', () => {
   describe('adjustDayNumberOfWeekIfWeekStartsOnSpecificDay', () => {

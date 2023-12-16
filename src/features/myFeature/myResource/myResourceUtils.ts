@@ -1,5 +1,5 @@
 import {Task, TaskStatus} from './myResourceTypes';
-import {removeMongoVersionFields} from '../../shared/utils';
+import {removeMongoVersionFields} from 'src/features/shared/utils';
 
 export const convertTaskDBResultToTaskObject = (dbResult: any): Task => {
   const taskObject = dbResult.toObject();

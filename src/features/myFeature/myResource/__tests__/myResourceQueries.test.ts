@@ -1,4 +1,4 @@
-import {useDatabase} from '../../../../config/test-setup';
+import {useDatabase} from 'src/config/test-setup';
 
 useDatabase();
 

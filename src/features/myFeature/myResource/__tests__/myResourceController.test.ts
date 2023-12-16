@@ -1,13 +1,10 @@
 import request from 'supertest';
-import {useDatabase} from '../../../../config/test-setup';
+import {useDatabase} from 'src/config/test-setup';
 
-import app from '../../../../app';
-import {
-  aTask1,
-  seedTestData_tasks,
-} from '../../../../config/seedTestData/seedTasks';
-import {user1} from '../../../../config/seedTestData/seedUsers';
-import {TaskStatus} from '../myResourceTypes';
+import app from 'src/app';
+import {aTask1, seedTestData_tasks} from 'src/config/seedTestData/seedTasks';
+import {user1} from 'src/config/seedTestData/seedUsers';
+import {TaskStatus} from 'src/features/myFeature/myResource/myResourceTypes';
 
 useDatabase();
 

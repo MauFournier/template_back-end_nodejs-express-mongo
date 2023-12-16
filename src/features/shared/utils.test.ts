@@ -1,4 +1,4 @@
-import {aTask1, aTask2} from '../../config/seedTestData/seedTasks';
+import {aTask1, aTask2} from 'src/config/seedTestData/seedTasks';
 import {
   addFakeUndefinedMongoVersioningField,
   removeMongoVersionFields,

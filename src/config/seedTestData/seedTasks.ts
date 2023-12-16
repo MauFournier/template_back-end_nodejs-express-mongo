@@ -1,7 +1,7 @@
 import {
   Task,
   TaskStatus,
-} from '../../features/myFeature/myResource/myResourceTypes';
+} from 'src/features/myFeature/myResource/myResourceTypes';
 
 export const aTask1: Task = {
   _id: 'id_aTask1',

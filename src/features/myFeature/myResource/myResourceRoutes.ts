@@ -6,7 +6,7 @@ import {
   updateTask,
   deleteTask,
 } from './myResourceController';
-import catchAsyncErrors from '../../shared/middleware/ErrorCatcherMiddleware/catchAsyncErrors';
+import catchAsyncErrors from 'src/features/shared/middleware/ErrorCatcherMiddleware/catchAsyncErrors';
 
 const router = express.Router();
 
