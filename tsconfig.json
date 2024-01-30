@@ -1,3 +1,4 @@
+// prettier-ignore
 {
   "compilerOptions": {
     "target": "es6",
@@ -14,5 +15,5 @@
       "src/*": ["./src/*"]
     }
   },
-  "exclude": ["./node_modules", "./corkboard.ts", "./corkboard.example.ts"]
+  "exclude": ["./node_modules", "./corkboard.ts", "./corkboard.example.ts", "./templates"]
 }
