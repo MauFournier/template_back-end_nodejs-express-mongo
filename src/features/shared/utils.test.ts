@@ -1,76 +1,86 @@
-import {aTask1, aTask2} from 'src/config/seedTestData/seedTasks';
 import {
   addFakeUndefinedMongoVersioningField,
   removeMongoVersionFields,
   removeMongoVersionFieldsFromSingleRecord,
 } from './utils';
 
+export const aResource1 = {
+  _id: 'id_aResource1',
+  createdAt: '2020-10-29T12:00:00.000Z',
+  updatedAt: '2020-10-29T12:00:00.000Z',
+};
+
+export const aResource2 = {
+  _id: 'id_aResource2',
+  createdAt: '2020-10-30T12:00:00.000Z',
+  updatedAt: '2020-10-30T12:00:00.000Z',
+};
+
 describe('Shared Utils', () => {
   describe('removeMongoVersionFieldsFromSingleRecord', () => {
     it('should remove the __v field from a single record', async () => {
-      const task = {
-        ...aTask1,
+      const resource = {
+        ...aResource1,
         __v: 0,
       };
 
-      const taskWithoutMongoVersioningField =
-        removeMongoVersionFieldsFromSingleRecord(task);
+      const resourceWithoutMongoVersioningField =
+        removeMongoVersionFieldsFromSingleRecord(resource);
 
-      expect('__v' in taskWithoutMongoVersioningField).toBe(false);
+      expect('__v' in resourceWithoutMongoVersioningField).toBe(false);
     });
   });
 
   describe('removeMongoVersionFields', () => {
     it('should remove the __v field from a single record', async () => {
-      const task = {
-        ...aTask1,
+      const resource = {
+        ...aResource1,
         __v: 0,
       };
 
-      const taskWithoutMongoVersioningField = removeMongoVersionFields(task);
+      const resourceWithoutMongoVersioningField =
+        removeMongoVersionFields(resource);
 
-      expect('__v' in taskWithoutMongoVersioningField).toBe(false);
+      expect('__v' in resourceWithoutMongoVersioningField).toBe(false);
     });
 
     it('should remove the __v field from multiple records', async () => {
-      const tasks = [
+      const resources = [
         {
-          ...aTask1,
+          ...aResource1,
           __v: 0,
         },
         {
-          ...aTask2,
+          ...aResource2,
           __v: 0,
         },
       ];
 
-      const tasksWithoutMongoVersioningField = removeMongoVersionFields(tasks);
+      const resourcesWithoutMongoVersioningField =
+        removeMongoVersionFields(resources);
 
-      expect('__v' in tasksWithoutMongoVersioningField[0]).toBe(false);
-      expect('__v' in tasksWithoutMongoVersioningField[1]).toBe(false);
+      expect('__v' in resourcesWithoutMongoVersioningField[0]).toBe(false);
+      expect('__v' in resourcesWithoutMongoVersioningField[1]).toBe(false);
     });
   });
 
   describe('addFakeUndefinedMongoVersioningField', () => {
     it('should add a fake __v field', async () => {
-      const task = {
-        _id: 'id_task1',
-        title: 'Example task 1',
-        duration: 30,
-        description: 'Example task 1 description',
+      const resource = {
+        _id: 'id_resource1',
+        title: 'Example resource 1',
+        description: 'Example resource 1 description',
         status: 'Pending',
         userId: 'id_user1',
-        categoryId: 'id_exampleCategory1',
         createdAt: '2022-10-29T12:00:00.000Z',
         updatedAt: '2022-10-29T12:00:00.000Z',
-        links: ['https://example.com'],
       };
 
-      const taskWithFakeMongoVersioningField =
-        addFakeUndefinedMongoVersioningField(task);
+      const resourceWithFakeMongoVersioningField =
+        addFakeUndefinedMongoVersioningField(resource);
 
-      expect(taskWithFakeMongoVersioningField).toEqual({
-        ...task,
+      expect(resourceWithFakeMongoVersioningField).toEqual({
+        ...resource,
         __v: undefined,
       });
     });
